@@ -1,1 +1,1 @@
-# project_image_classification
+# project_fish_image_classification
