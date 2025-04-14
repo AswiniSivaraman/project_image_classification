@@ -20,6 +20,12 @@ This project focuses on classifying fish images into multiple categories using d
 - Train, Validation, and Test sets organized in folders.
 - Loaded using `ImageDataGenerator` with strong data augmentation.
 
+> 📌 **Note:**  
+> To access the dataset used in this project, refer to the file:  
+> `requirements_docs/Multiclass_Image_Classification.pdf`  or `requirements_docs/Multiclass_Image_Classification.docx`
+
+> This document contains the dataset download link and related instructions.
+
 ---
 
 ## Methodology
