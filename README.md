@@ -72,3 +72,9 @@ This project focuses on classifying fish images into multiple categories using d
 
 ---
 
+## Addons
+
+Dockerized the Streamlit app and deployed it on an Amazon EC2 instance running Amazon Linux.  
+Configured security groups to expose port 8501 and accessed the app via the instance's public IP.
+
+
