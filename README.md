@@ -21,10 +21,9 @@ This project focuses on classifying fish images into multiple categories using d
 - Loaded using `ImageDataGenerator` with strong data augmentation.
 
 > 📌 **Note:**  
-> To access the dataset used in this project, refer to the file:  
-> `requirements_docs/Multiclass_Image_Classification.pdf`  or `requirements_docs/Multiclass_Image_Classification.docx`
-
-> This document contains the dataset download link and related instructions.
+> https://drive.google.com/drive/folders/1iKdOs4slf3XvNWkeSfsszhPRggfJ2qEd?usp=sharing
+>
+> refer this link for dataset
 
 ---
 
