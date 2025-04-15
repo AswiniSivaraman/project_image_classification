@@ -72,8 +72,61 @@ This project focuses on classifying fish images into multiple categories using d
 ---
 
 ## Addons
+## Dockerization and Deployment
 
-Dockerized the Streamlit app and deployed it on an Amazon EC2 instance running Amazon Linux.  
-Configured security groups to expose port 8501 and accessed the app via the instance's public IP.
+Dockerized the Streamlit app and deployed it on an Amazon EC2 instance running Amazon Linux.  Configured security groups to expose port 8501 and accessed the app via the instance's public IP.
+
+To ensure platform-independent and scalable deployment, the Streamlit app was containerized using Docker and deployed on an AWS EC2 instance (Amazon Linux) using SSH.
+
+### Steps Followed:
+ 
+#### Step-1️ SSH into AWS EC2 Instance
+ 
+Connected securely to the EC2 instance using a private key:
+```bash
+ssh -i "C:/path/to/your/.pem file" ec2-user@<your-ec2-public-ip>
+```
+ 
+#### Step-2 Transferred Project Files
+ 
+Used SCP to transfer necessary project files (model, app, Dockerfile, etc.) from local machine to EC2:
+```bash
+scp -i "C:/path/to/your/.pem file" -r \
+"C:/path/to/your/streamilt .py file" \
+"C:/path/to/Dockerfile file" \
+"C:/path/to/models folder" \
+"C:/path/to/best_model folder" \
+"C:/path/to/utils folder" \
+"C:/path/to/requirements.txt file" \
+ec2-user@<your-ec2-public-ip>
+```
+ 
+#### Step-3 Built Docker Image on EC2
+ 
+Navigated into the app directory and built the image:
+```bash
+docker build -t fish-image-streamlit-app .
+ 
+```
+ 
+#### Step-4 Ran Docker Container
+ 
+Exposed the app on port 8501 (Streamlit’s default port):
+```bash
+docker run -d -p 8501:8501 fish-image-streamlit-app .
+```
+ 
+Checked container status using:
+```bash
+docker ps
+```
+ 
+#### Step-5 Access the Web App
+ 
+The deployed Streamlit app was accessible via:
+```bash
+http://<your-ec2-public-ip>:8501
+ 
+```
 
 
